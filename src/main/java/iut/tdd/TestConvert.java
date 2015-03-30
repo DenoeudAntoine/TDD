@@ -17,9 +17,13 @@ public class TestConvert {
 		Assert.assertEquals(expected, actual);
 	}
 	
-	/*public void test_num2text_un () {
+	@Test
+	public void test_num2text_un () {
 		String input = "1";
-		String expected = ""
-	}*/
+		String expected = "un";
+		Convert myConvert = new Convert();
+		String actual =myConvert.num2text(input);
+		Assert.assertEquals(expected,actual);
+	}
 	
 }
