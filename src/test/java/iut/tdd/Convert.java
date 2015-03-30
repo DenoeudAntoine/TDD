@@ -1,46 +1,34 @@
 package iut.tdd;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Convert {
-	public static String num2text(String input) {
-		switch (input) {
-		case "0":
-		 return "zéro";
+	
+	static Map<String,String> liste = new HashMap<String,String> ();
+	
+	static {
+		liste.put("0", "zéro");
+		liste.put("1", "un");
+		liste.put("2", "deux");
+		liste.put("3", "trois");
+		liste.put("4", "quatre");
+		liste.put("5", "cinq");
+		liste.put("6", "six");
+		liste.put("7", "sept");
+		liste.put("8", "huit");
+		liste.put("9", "neuf");
+		liste.put("10", "dix");
+		liste.put("11", "onze");
+		liste.put("12", "douze");
+		liste.put("13", "treize");
+		liste.put("14", "quatorze");
+		liste.put("15", "quinze");
+		liste.put("16", "seize");
 		
-		case "1" :
-			return "un";
-		case "2":
-			return "deux";
-		case "3":
-			return "trois";
-		case "4" :
-			return "quatre";
-		case "5" :
-			return "cinq";
-		case "6":
-			return "six";
-		case "7":
-			return "sept";
-		case "8":
-			return "huit";
-		case "9":
-			return "neuf";
-		case "10":
-			return "dix";
-		case "11" : 
-			return "onze";
-		case "12":
-			return "douze";
-		case "13":
-			return "treize";
-		case "14":
-			return "quatorze";
-		case "15" :
-			return "quinze";
-		case "16" :
-			return "seize";
-		default:
-			return null;
-		}
+	}
+	public static String num2text(String input) {
+		return liste.get(input);
 	}
 	
 	public static String text2num(String input) {
