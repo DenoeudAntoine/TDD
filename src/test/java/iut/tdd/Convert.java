@@ -25,10 +25,26 @@ public class Convert {
 		liste.put("14", "quatorze");
 		liste.put("15", "quinze");
 		liste.put("16", "seize");
-		
+		liste.put("20", "vingt");
+		liste.put("30", "trente");
+		liste.put("40", "quarante");
+		liste.put("50", "cinquante");
+		liste.put("60", "soixante");
+		liste.put("70", "soixante dix");
+		liste.put("80", "quatre vingt");
+		liste.put("90", "quatre vingt dix");
 	}
+	
 	public static String num2text(String input) {
-		return liste.get(input);
+		if (liste.get(input)!=null) {
+			return liste.get(input);
+		} else if (input.substring(1,2).equals("1")) {
+			String ret =liste.get(input.substring(0,1)+"0") +" et un";
+			return  ret;
+		} else {
+			String ret =liste.get(input.substring(0,1)+"0") + " " + liste.get(input.substring(1,2));
+			return  ret;
+		}
 	}
 	
 	public static String text2num(String input) {
